@@ -1,0 +1,149 @@
+SKENARIO 1 : BERT 1 EPOCH EARLY STOP
+
+
+PS D:\RAZZAN UMM\INFORMATIKA SEMESTER 6\NLP (PEMROSESAN BAHAN ALAMI)> & C:/Users/ROG-STRIX/AppData/Local/Programs/Python/Python311/python.exe "d:/RAZZAN UMM/INFORMATIKA SEMESTER 6/NLP (PEMROSESAN BAHAN ALAMI)/WEEK 2/Assignment Sentiment Analysis/explore_data_threads_review.py"
+Jumlah data kosong per kolom:
+source                0
+review_description    0
+rating                0
+review_date           0
+dtype: int64
+        source                                 review_description  rating          review_date
+0  Google Play  Meh. Not the greatest experience on a Chromebo...       2  2023-07-08 14:18:24
+1  Google Play  Pretty good for a first launch!! Its easy to u...       3  2023-07-19 20:52:48
+2  Google Play  For a brand new app, it's very well optimized....       3  2023-07-06 23:03:11
+3  Google Play  Great app with a lot of potential! However, th...       3  2023-07-10 00:53:25
+4  Google Play  The app is good, but it needs a lot of functio...       3  2023-07-06 16:57:43
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 32910 entries, 0 to 32909
+Data columns (total 4 columns):
+ #   Column              Non-Null Count  Dtype
+---  ------              --------------  -----
+ 0   source              32910 non-null  object
+ 1   review_description  32910 non-null  object
+ 2   rating              32910 non-null  int64
+ 3   review_date         32910 non-null  object
+dtypes: int64(1), object(3)
+memory usage: 1.0+ MB
+None
+d:\RAZZAN UMM\INFORMATIKA SEMESTER 6\NLP (PEMROSESAN BAHAN ALAMI)\WEEK 2\Assignment Sentiment Analysis\explore_data_threads_review.py:51: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=df["rating"], palette="coolwarm")
+                                  review_description  rating sentiment
+0  Meh. Not the greatest experience on a Chromebo...       2  Negative
+1  Pretty good for a first launch!! Its easy to u...       3   Neutral
+2  For a brand new app, it's very well optimized....       3   Neutral
+3  Great app with a lot of potential! However, th...       3   Neutral
+4  The app is good, but it needs a lot of functio...       3   Neutral
+d:\RAZZAN UMM\INFORMATIKA SEMESTER 6\NLP (PEMROSESAN BAHAN ALAMI)\WEEK 2\Assignment Sentiment Analysis\explore_data_threads_review.py:73: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.countplot(x=df["sentiment"], palette="coolwarm", order=["Negative", "Neutral", "Positive"])
+                                  review_description                                     cleaned_review
+0  Meh. Not the greatest experience on a Chromebo...  meh not the greatest experience on a chromeboo...
+1  Pretty good for a first launch!! Its easy to u...  pretty good for a first launch its easy to use...
+2  For a brand new app, it's very well optimized....  for a brand new app its very well optimized ho...
+3  Great app with a lot of potential! However, th...  great app with a lot of potential however ther...
+4  The app is good, but it needs a lot of functio...  the app is good but it needs a lot of function...
+[nltk_data] Downloading package punkt to C:\Users\ROG-
+[nltk_data]     STRIX\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+                                      cleaned_review                                             tokens
+0  meh not the greatest experience on a chromeboo...  [meh, not, the, greatest, experience, on, a, c...
+1  pretty good for a first launch its easy to use...  [pretty, good, for, a, first, launch, its, eas...
+2  for a brand new app its very well optimized ho...  [for, a, brand, new, app, its, very, well, opt...
+3  great app with a lot of potential however ther...  [great, app, with, a, lot, of, potential, howe...
+4  the app is good but it needs a lot of function...  [the, app, is, good, but, it, needs, a, lot, o...
+[nltk_data] Downloading package stopwords to C:\Users\ROG-
+[nltk_data]     STRIX\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+                                              tokens                                    filtered_tokens
+0  [meh, not, the, greatest, experience, on, a, c...  [meh, greatest, experience, chromebook, seems,...
+1  [pretty, good, for, a, first, launch, its, eas...  [pretty, good, first, launch, easy, use, selfe...
+2  [for, a, brand, new, app, its, very, well, opt...  [brand, new, app, well, optimized, however, mi...
+3  [great, app, with, a, lot, of, potential, howe...  [great, app, lot, potential, however, lot, nee...
+4  [the, app, is, good, but, it, needs, a, lot, o...  [app, good, needs, lot, functionality, example...
+[nltk_data] Downloading package wordnet to C:\Users\ROG-
+[nltk_data]     STRIX\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+                                     filtered_tokens                                  lemmatized_tokens
+0  [meh, greatest, experience, chromebook, seems,...  [meh, greatest, experience, chromebook, seems,...
+1  [pretty, good, first, launch, easy, use, selfe...  [pretty, good, first, launch, easy, use, selfe...
+2  [brand, new, app, well, optimized, however, mi...  [brand, new, app, well, optimized, however, mi...
+3  [great, app, lot, potential, however, lot, nee...  [great, app, lot, potential, however, lot, nee...
+4  [app, good, needs, lot, functionality, example...  [app, good, need, lot, functionality, example,...
+Shape dari BoW: (32910, 17332)
+Fitur BoW: ['aa' 'aaa' 'aaaaaaaanaralakka' 'aaaaabfjfhfhd' 'aaagyi' 'aaahhhh' 'aab'
+ 'aacha' 'aachi' 'aad' 'aaden' 'aadeshkarira' 'aadhar' 'aadhe' 'aadt'
+ 'aaega' 'aagaya' 'aage' 'aagya' 'aaha']
+Shape dari TF-IDF: (32910, 17332)
+Fitur TF-IDF: ['aa' 'aaa' 'aaaaaaaanaralakka' 'aaaaabfjfhfhd' 'aaagyi' 'aaahhhh' 'aab'
+ 'aacha' 'aachi' 'aad' 'aaden' 'aadeshkarira' 'aadhar' 'aadhe' 'aadt'
+ 'aaega' 'aagaya' 'aage' 'aagya' 'aaha']
+Vektor kata 'app': [-0.15663955  0.9068846   0.19914088  0.36919147  0.08095697 -1.2818953
+  0.17424984  1.4075241   0.36368084 -0.83491087  0.42337728 -0.06899024
+ -0.4581603   1.1204847   0.1864277  -0.6150921  -0.37555888 -0.34220186
+ -1.0470941  -0.15147969 -0.03257929  0.2672523   0.30425435  0.04744187
+  0.17566136 -0.4364351   0.16862819 -0.3126864  -0.78875977  0.11870687
+  0.07550124  0.04006618  0.21521333 -0.19300549 -0.20916265  0.7919207
+  0.4918469  -0.37592205 -0.15601672 -0.50055933 -0.6078589  -0.34246865
+ -0.47320166 -0.27620032  0.15763761  0.41106868 -0.292612   -0.11536764
+ -0.2779073   0.09573296  0.09816533 -0.2882662  -0.5630849  -0.1638342
+  0.09036602  0.47102907  0.06067417 -0.802816   -0.67026734  0.18305509
+  0.37423432  0.3087068  -0.2984866  -0.41850045 -0.24916972  0.56520945
+  0.3866035   0.44625643 -0.6986164   0.5802102  -0.12861481  0.05411488
+ -0.16749656 -0.01793477  0.8694301   0.26393238 -0.24593093 -0.06262003
+ -0.6626745   0.26820785  0.40213978  0.27526203  0.04099841  0.60092664
+ -0.3910024   0.07015741  0.8335758  -0.09101822 -0.06567457  0.10247435
+  0.91395265 -0.15072775  0.45541772  0.01963995  0.5206908   0.3863517
+  0.22090182  0.0777876  -0.45144188 -0.1368032 ]
+Dimensi vektor Word2Vec: 100
+Jumlah data latih: 26328
+Jumlah data uji: 6582
+BoW shape: (26328, 15085)
+TF-IDF shape: (26328, 15085)
+Accuracy: 0.8018839258584017
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+              precision    recall  f1-score   support
+
+    Negative       0.76      0.77      0.77      2310
+     Neutral       0.00      0.00      0.00       484
+    Positive       0.82      0.92      0.87      3788
+
+    accuracy                           0.80      6582
+   macro avg       0.53      0.56      0.55      6582
+weighted avg       0.74      0.80      0.77      6582
+
+
+2025-02-25 20:32:15.717482: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-25 20:32:17.686002: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Epoch 1:   0%|▏                                                                                                                | 4/3291 [00:18<3:48:40,  4.17s/it, loss=0.963]Early stopping triggered!
+Epoch 1:   0%|▏                                                                                                                | 4/3291 [00:22<5:03:16,  5.54s/it, loss=0.963] 
+Training Selesai!
+Hasil Evaluasi Model BERT:
+Accuracy: 0.6702
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+C:\Users\ROG-STRIX\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1565: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+              precision    recall  f1-score   support
+
+    Negative       0.54      0.64      0.58      2222
+     Neutral       0.00      0.00      0.00       527
+    Positive       0.75      0.78      0.77      3833
+
+    accuracy                           0.67      6582
+   macro avg       0.43      0.47      0.45      6582
+weighted avg       0.62      0.67      0.64      6582
